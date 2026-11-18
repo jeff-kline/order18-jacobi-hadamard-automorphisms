@@ -53,7 +53,7 @@ fails on any warning, overfull box or undefined reference. The release PDF
 `paper/main.pdf` has SHA-256
 
 ```text
-e9f45cd139ca16f9d57656df383ab6b1d9d92a4a80f64fa5634c71dde2010b9c
+317b17470a2b2c6c3cd1012df14a75df465ef76fe4acac602d4b01304bb2d58b
 ```
 
 ## Exclusions

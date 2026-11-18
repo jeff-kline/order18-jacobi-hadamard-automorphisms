@@ -177,3 +177,15 @@ refer to that private history and do not exist in the public repository. The
 file tree of the published commit equals the audited candidate, plus this
 note, the author's acceptance of the P1 residual in ADMISSION.md, and the
 refreshed MANIFEST.sha256.
+
+## 2026-11-17/18 — tag, archive and admission
+
+- **Tag:** annotated `v0.1.0` (object 19b662c) → edc6913, with the noreply tagger. Candidate audit 8/8.
+- **Pinning:** before the GitHub Release, the GitHub zipball was downloaded twice, identical: 485,166 bytes, SHA-256 97d1ecac…122f. `git archive` was generated twice, identical: 482,410 bytes, SHA-256 879a7f28…83bd.
+- **Release and Zenodo:** the GitHub Release was published 2026-11-18 02:47 UTC. Zenodo record 24329143 has version DOI 10.5281/zenodo.24329143 and concept DOI 10.5281/zenodo.24329142.
+  - The Zenodo file is byte-identical to the pinned zipball.
+  - The 89 files inside pass the manifest.
+  - The DOI resolves.
+  - Archived-state audit: 11/11.
+- **Site:** entry live at site commit 828f52d. The title and blurb were approved by the author, the latter after one revision. Pages build and live HTML verified.
+- **Living metadata:** README status paragraph, CITATION.cff DOI and date-released, DOI on the paper's title page with the PDF rebuilt, ADMISSION ADMITTED, CORRECTIONS version history.

@@ -3,6 +3,15 @@ message: "Please cite Version 0.1.0 of this research repository."
 title: "Automorphisms and equivalence classes of the order-18 Jacobi Hadamard matrices"
 type: software
 version: 0.1.0
+doi: 10.5281/zenodo.24329143
+date-released: 2026-11-18
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24329143
+    description: "Version DOI for release 0.1.0"
+  - type: doi
+    value: 10.5281/zenodo.24329142
+    description: "Concept DOI (all versions)"
 authors:
   - family-names: Kline
     given-names: Jeffery

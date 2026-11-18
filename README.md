@@ -2,9 +2,19 @@
 
 Jeffery Kline
 
-**Status: release candidate for version 0.1.0.** The claims are frozen
-and audited (see [ADMISSION.md](ADMISSION.md)). There is no tag, archive or
-DOI yet, so there is no stable citation. This is the sequel to
+[![Version DOI: 10.5281/zenodo.24329143](https://zenodo.org/badge/DOI/10.5281/zenodo.24329143.svg)](https://doi.org/10.5281/zenodo.24329143)
+
+**Status: version 0.1.0 admitted 2026-11-17.** The immutable release is
+[`v0.1.0`](https://github.com/jeff-kline/order18-jacobi-hadamard-automorphisms/releases/tag/v0.1.0),
+archived at version DOI [`10.5281/zenodo.24329143`](https://doi.org/10.5281/zenodo.24329143). The concept DOI
+[`10.5281/zenodo.24329142`](https://doi.org/10.5281/zenodo.24329142) resolves to the latest version; cite the
+version DOI for reproducibility. Admission under the project's
+[public research standard](https://jeff-kline.github.io/posts/research-program/index.html)
+is a release decision, not peer review or a correctness certificate; see
+[ADMISSION.md](ADMISSION.md). The tagged snapshot retains its prepublication
+“release candidate” wording because the DOI did not exist when it was made.
+
+This is the sequel to
 [*Order-18 Jacobi triples beyond the sextic shift orbit*](https://github.com/jeff-kline/order18-jacobi-triples)
 ([doi:10.5281/zenodo.21783219](https://doi.org/10.5281/zenodo.21783219)).
 
