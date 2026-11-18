@@ -1,0 +1,34 @@
+anchors 0 0 maps 19 cumulative nodes 20
+anchors 0 1 maps 0 cumulative nodes 21
+anchors 0 2 maps 0 cumulative nodes 22
+anchors 0 3 maps 0 cumulative nodes 23
+anchors 1 0 maps 0 cumulative nodes 24
+anchors 1 1 maps 0 cumulative nodes 25
+anchors 1 2 maps 0 cumulative nodes 26
+anchors 1 3 maps 0 cumulative nodes 46
+anchors 2 0 maps 0 cumulative nodes 47
+anchors 2 1 maps 0 cumulative nodes 48
+anchors 2 2 maps 0 cumulative nodes 49
+anchors 2 3 maps 0 cumulative nodes 50
+anchors 3 0 maps 0 cumulative nodes 51
+anchors 3 1 maps 0 cumulative nodes 52
+anchors 3 2 maps 0 cumulative nodes 72
+anchors 3 3 maps 0 cumulative nodes 73
+anchors 4 4 maps 0 cumulative nodes 74
+anchors 4 5 maps 0 cumulative nodes 75
+anchors 4 6 maps 0 cumulative nodes 76
+anchors 4 7 maps 0 cumulative nodes 77
+anchors 5 4 maps 0 cumulative nodes 78
+anchors 5 5 maps 0 cumulative nodes 79
+anchors 5 6 maps 0 cumulative nodes 80
+anchors 5 7 maps 0 cumulative nodes 81
+anchors 6 4 maps 0 cumulative nodes 82
+anchors 6 5 maps 0 cumulative nodes 83
+anchors 6 6 maps 0 cumulative nodes 84
+anchors 6 7 maps 0 cumulative nodes 85
+anchors 7 4 maps 0 cumulative nodes 86
+anchors 7 5 maps 0 cumulative nodes 87
+anchors 7 6 maps 0 cumulative nodes 88
+anchors 7 7 maps 0 cumulative nodes 89
+stabilizer 19 orbit 1 effective order 19 signed order 38
+19 rows 0/0 1/0 2/0 3/0 columns 0/0 1/0 2/0 3/0

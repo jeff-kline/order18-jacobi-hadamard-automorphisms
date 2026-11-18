@@ -1,0 +1,68 @@
+cff-version: 1.2.0
+message: "Please cite Version 0.1.0 of this research repository."
+title: "Automorphisms and equivalence classes of the order-18 Jacobi Hadamard matrices"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Kline
+    given-names: Jeffery
+repository-code: "https://github.com/jeff-kline/order18-jacobi-hadamard-automorphisms"
+url: "https://github.com/jeff-kline/order18-jacobi-hadamard-automorphisms"
+license: GPL-3.0-only
+abstract: >-
+  A paper and release repository on the skew Hadamard matrices of order
+  4(343^d+1), d odd, built from three order-18 cyclotomic sign patterns and
+  the Paley pattern in the bordered Wallis-Whiteman array (Kline 2026,
+  doi:10.5281/zenodo.21783219). Under independent signed permutations of
+  rows and columns, every automorphism fixes the border and acts on all
+  eight copies of the field by one map x -> a x^(343^j), a an eighteenth
+  power; these maps form a group of order d(343^d-1)/18, which is 19 at
+  order 1376. A second system of three patterns is given, and both systems
+  are proved to work for every prime p = 7 or 31 mod 36 and field size
+  p^(3d), d odd. They give at least eight inequivalent skew Hadamard matrices at
+  every such order 4(p^(3d)+1); on the characteristic-7 tower, with the
+  published character, the arrangements and transposes give exactly sixteen
+  classes when 3 does not divide d. No
+  such matrix is equivalent to a Kronecker product, a skew doubling, or a
+  matrix of the same array with sextic-class patterns. The orders were
+  known. Proofs use a four-row invariant, Weil's bound, Kantor's theorem on
+  Paley design automorphisms, and exact finite certificates. Novelty is
+  bounded to the sources searched.
+keywords:
+  - Hadamard matrices
+  - skew Hadamard matrices
+  - automorphism groups
+  - Hadamard equivalence
+  - cyclotomy
+  - Jacobi sums
+  - Wallis-Whiteman array
+  - Paley design
+references:
+  - type: software
+    title: "Order-18 Jacobi triples beyond the sextic shift orbit"
+    authors:
+      - family-names: Kline
+        given-names: Jeffery
+    version: 0.1.0
+    year: 2026
+    doi: 10.5281/zenodo.21783219
+  - type: article
+    title: "2-transitive symmetric designs"
+    authors:
+      - family-names: Kantor
+        given-names: William M.
+    journal: "Transactions of the American Mathematical Society"
+    volume: 146
+    year: 1969
+    doi: 10.1090/S0002-9947-1969-0255422-6
+  - type: article
+    title: "Some classes of Hadamard matrices with constant diagonal"
+    authors:
+      - family-names: Wallis
+        given-names: Jennifer Seberry
+      - family-names: Whiteman
+        given-names: Albert Leon
+    journal: "Bulletin of the Australian Mathematical Society"
+    volume: 7
+    year: 1972
+    doi: 10.1017/S0004972700044993

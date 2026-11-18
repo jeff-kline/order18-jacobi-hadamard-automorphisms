@@ -1,0 +1,2 @@
+Placement 0132 flip 0 base quartet profiles 0,1,2,3 / 4; 4,347,690,1033 / 4
+Placement 0132 flip 1 base quartet profiles 0,1,2,3 / 4; 4,347,690,1033 / 4

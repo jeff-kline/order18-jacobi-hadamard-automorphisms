@@ -1,0 +1,896 @@
+% Automorphisms and equivalence classes of the order-18 Jacobi Hadamard matrices
+% Compile with pdflatex (see the repository Makefile).
+
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\setlength{\emergencystretch}{3em}
+\hypersetup{
+  pdftitle={Automorphisms and equivalence classes of the order-18 Jacobi Hadamard matrices},
+  pdfauthor={Jeffery Kline}
+}
+
+\title{Automorphisms and equivalence classes of the\\ order-18 Jacobi Hadamard matrices}
+\author{Jeffery Kline}
+\date{Release candidate, November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+An earlier paper constructed skew Hadamard matrices of orders
+$4(343^d+1)$, for every odd $d$, by placing three sign patterns on the
+eighteen classes of an order-18 multiplicative character of the field with
+$343^d$ elements, together with the Paley pattern, in the bordered
+Wallis--Whiteman array. That paper proved that the patterns work at every
+order and left the equivalence of the completed matrices open. Here we
+determine their automorphism groups. Under independent signed permutations
+of rows and columns, every automorphism fixes the border and acts on each of
+the eight copies of the field by the same map $x\mapsto ax^{343^j}$, where
+$a$ is an eighteenth power; these maps form a group of order $d(343^d-1)/18$, which is
+$19$ at the first order, $1376$. The proof recovers the border, the field
+blocks and their origins from the matrix alone: exactly two sets of four rows
+have a product that is constant away from four columns, the Paley
+submatrices are recognized by their row correlations, and Kantor's theorem
+on the automorphisms of the Paley design makes the coordinate maps
+semilinear. We give a second set of three patterns and prove that both sets
+work for every prime $p\equiv7$ or $31\pmod{36}$ and field size $p^{3d}$ with $d$ odd.
+The same invariants show that the resulting matrices give at least eight
+inequivalent skew Hadamard matrices at every such order $4(p^{3d}+1)$. On the
+original tower the two sets, their arrangements in the array and the
+transposes give exactly sixteen equivalence classes when $3\nmid d$, and
+fourteen or sixteen when $3\mid d$. None of these matrices is equivalent to
+a Kronecker product, to a skew doubling, or to a matrix in the same array
+whose patterns are constant on the classes of sixth powers. All of these
+orders were known to admit skew Hadamard matrices.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{The matrices}
+A Hadamard matrix of order $N$ is an $N\times N$ matrix $H$ with entries
+$\pm1$ and $HH^{\mathsf T}=NI$; it is skew if $H+H^{\mathsf T}=2I$. Two
+Hadamard matrices are \emph{equivalent} if one is obtained from the other by
+permuting rows, permuting columns, and multiplying rows and columns by $-1$,
+all independently. An \emph{automorphism} of $H$ is such an operation that
+maps $H$ to itself. Equivalence and automorphisms are the standard way to
+decide whether two constructions are really different.
+
+The earlier paper~\cite{Kline18} worked in the field $E=\F_Q$ with
+$Q=343^d$, $d$ odd. It took an order-18 multiplicative character of $E$,
+three fixed sign patterns on its eighteen classes, and the Paley (quadratic
+character) pattern, and placed the four resulting $\pm1$ functions in the
+bordered array of Wallis and Whiteman~\cite{WallisWhiteman}. It proved that
+the result is a skew Hadamard matrix of order $4(Q+1)$ for every odd $d$,
+beginning with order $1376$, and that the three patterns are not the
+classical sextic patterns in disguise. It did not decide whether the
+completed matrices are new up to equivalence.
+
+\subsection{Results}
+Write $\Lambda_Q=d(Q-1)/18$ when $Q=p^{3d}$. Section~\ref{sec:array} defines the
+array precisely, and the two pattern systems I and II.
+
+\begin{theorem}[Automorphisms]\label{thm:aut}
+Let $Q=343^d$ with $d$ odd, and let $H$ be the matrix of~\cite{Kline18}.
+Every automorphism of $H$ fixes the four border rows and the four border
+columns, maps each of the eight copies of $E$ to itself, and acts on all of
+them by one map
+\[
+ x\longmapsto a\,x^{343^j},\qquad a\in(E^\times)^{18},\ j\in\Z/d\Z,
+\]
+together with, possibly, negation of every row and every column. Every such
+map is an automorphism. The group of these permutations has order
+$\Lambda_Q=d(Q-1)/18$; it is cyclic of order $19$ when $Q=343$.
+\end{theorem}
+
+\begin{theorem}[Two systems in infinitely many characteristics]\label{thm:systems}
+Let $p$ be a prime with $p\equiv7$ or $31\pmod{36}$, let $d$ be odd, put
+$Q=p^{3d}$ and fix any character of order $18$ of $\F_Q^\times$. For each of
+the systems I and II of Table~\ref{tab:words}, the bordered array gives a
+skew Hadamard matrix of order $4(Q+1)$. The matrices obtained from the two
+systems, with or without the first pattern reversed, and their transposes,
+are eight pairwise inequivalent Hadamard matrices.
+\end{theorem}
+
+\begin{theorem}[Sixteen classes]\label{thm:sixteen}
+Let $Q=343^d$ with $d$ odd and use the character of~\cite{Kline18}. Arrange
+the four patterns of system I or of system II in the four positions of the
+array in any order, and reverse any subset of them. These $768$ matrices and
+their transposes fall into exactly $16$ equivalence classes if $3\nmid d$,
+and into $14$ or $16$ classes if $3\mid d$. In particular there are exactly
+$16$ at order $1376$.
+\end{theorem}
+
+\begin{theorem}[Comparisons]\label{thm:compare}
+None of the matrices in Theorems~\ref{thm:systems} and~\ref{thm:sixteen} is
+equivalent to its transpose, to a Kronecker product of two Hadamard matrices
+of orders greater than one, or to a skew doubling
+$\begin{pmatrix}K&K\\-K^{\mathsf T}&K^{\mathsf T}\end{pmatrix}$ of a skew
+Hadamard matrix $K$. None is equivalent to a Hadamard matrix of the same
+bordered array whose four functions are constant on the cosets of the
+sixth powers.
+\end{theorem}
+
+All orders $4(p^{3d}+1)$ here were already known to have skew Hadamard
+matrices, for example from the Paley matrix by doubling. The theorems
+concern the matrices, not the orders.
+
+\subsection{How the proofs work}
+The array has four border rows and columns and four copies of the field on
+each side. The proofs read this structure off the matrix itself, so that it
+must be preserved by any equivalence.
+
+\emph{Four-row sets} (Section~\ref{sec:quartets}). For four rows, multiply
+them entrywise and count the entries in the minority sign. Exactly two sets
+of four rows have at most four minority entries: the border rows and the
+four rows at the origin of each field copy. For large fields this follows
+from Weil's bound for multiplicative character sums; at $Q=343$ an exhaustive
+search confirms it. This invariant already separates the matrices from
+Kronecker products, skew doublings and transposes.
+
+\emph{Paley blocks} (Section~\ref{sec:frame}). Signs on the border columns
+then split the remaining rows into the four field copies, and dually for
+columns. Among the sixteen field blocks, the four Paley blocks are the ones
+in which every two rows have inner product $\pm1$. Kantor's theorem on the
+automorphisms of the Paley design~\cite{Kantor2T} then forces every
+coordinate map to be semiaffine, and the origins fix the translations.
+
+\emph{Synchronization} (Section~\ref{sec:frame}). Each pattern sums to $1$
+over the field, so it has no additive period; this forces the eight
+coordinate maps to be one map $x\mapsto\beta x^{p^k}$. What remains is a
+finite problem over the eighteen classes, which a computer enumerates.
+
+\emph{Telling the border from the origin rows} (Sections~\ref{sec:aut}
+and~\ref{sec:classes}). The argument so far applies to equivalences that
+send border rows to border rows. In characteristic $7$ an exact
+calculation shows that only the border marking produces Paley blocks, at
+every odd $d$, by reducing cyclotomic numbers modulo $37$ and lifting them
+from $\F_{343}$. For one pair of arrangements of system II a finer
+histogram, computed modulo $19$, is needed; it decides the question when
+$3\nmid d$.
+
+\subsection{Earlier work and status}
+The bordered array is due to Wallis and Whiteman~\cite{WallisWhiteman}.
+Hall~\cite{Hall62} found a large group of automorphisms of the Paley
+Hadamard matrix and the whole group at order $12$, Kantor~\cite{Kantor69}
+determined the whole group for $q>11$, and Kantor~\cite{Kantor2T} determined
+that of the Paley design; we use the latter. Lehmer~\cite{Lehmer74} constructed
+supplementary difference sets from cyclotomy, and Yamada~\cite{Yamada92}
+related such sets to Jacobi sums. Products of four rows are a classical tool
+for distinguishing Hadamard matrices; Orrick~\cite{Orrick} uses closed
+quadruples of rows, the closed quartets of Section~\ref{sec:quartets}, in his
+switching operations. Momihara and Xiang~\cite{MomiharaXiang} constructed
+skew Hadamard difference families with $2^{u-1}$ blocks in $\F_{q^e}$ for
+$q\equiv2^u+1\pmod{2^{u+1}}$, $u\ge2$, and every $e$, from cyclotomy of order
+a power of $2$; these congruences force $q\equiv1\pmod4$, so none of their
+families lives in a field $\F_Q$ of this paper, all of which have
+$Q\equiv3\pmod4$. Pantangi~\cite{Pantangi}
+computed critical groups of the tournaments attached to one-, two- and
+four-block families and used them to show that those skew Hadamard matrices
+are not equivalent to the Paley matrix. Karoui \cite{Karoui}
+gave a skew Hadamard matrix of order $1252$ from order-16 cyclotomic unions
+and exhibited an explicit subgroup of its automorphism group. The
+construction of system I in characteristic $7$ is from~\cite{Kline18};
+system II and the extension to $p\equiv7,31\pmod{36}$ are new here, as far as
+we know. We found the theorems above in none of the sources we checked; the
+search is recorded in the repository and is not a claim of global priority.
+
+\section{The array and the two systems}\label{sec:array}
+
+\subsection{Patterns}
+Let $p\equiv7$ or $31\pmod{36}$ be prime, $d$ odd and $Q=p^{3d}$. Then
+$p^3\equiv19\pmod{36}$, so $Q\equiv19\pmod{36}$; in particular
+$Q\equiv3\pmod4$ and $18\mid Q-1$ with $(Q-1)/18$ odd. Let $\chi$ be a
+character of order $18$ of $E^\times$, $E=\F_Q$, and for $x\neq0$ let
+$j(x)\in\Z/18\Z$ be defined by $\chi(x)=e^{2\pi ij(x)/18}$. Since
+$(Q-1)/18$ is odd, $j(-1)=9$.
+
+A \emph{half-word} is $w=(w_0,\dots,w_8)\in\{\pm1\}^9$; extend it by
+$w_{j+9}=-w_j$. Its \emph{pattern} is the function
+\[
+ f_w(x)=w_{j(x)}\quad(x\neq0),\qquad f_w(0)=1.
+\]
+Because $j(-1)=9$, every pattern is odd away from the origin:
+$f_w(-x)=-f_w(x)$ for $x\neq0$. The pattern of $w_D=(+,-,+,-,+,-,+,-,+)$ is
+the quadratic character with value $1$ at $0$; we call it the Paley pattern.
+Each pattern takes the values $\pm1$ equally often on $E^\times$, so
+$\sum_{x\in E}f_w(x)=1$.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+System & $w_A$ & $w_B$ & $w_C$\\
+\midrule
+I  & $+{-}{-}{-}{-}{-}{-}{-}+$ & $+{-}{-}+{-}{-}{-}+{-}$ & $+{-}+++{-}++{-}$\\
+II & $+{-}+++++++$ & $++++++{-}+{-}$ & $+++{-}+{-}{-}{-}{-}$\\
+\bottomrule
+\end{tabular}
+\caption{The half-words of the two systems. The fourth pattern of each
+system is the Paley pattern $w_D=+{-}+{-}+{-}+{-}+$.}\label{tab:words}
+\end{table}
+
+For the characteristic-$7$ tower, $Q=343^d$, the character
+of~\cite{Kline18} is $\chi=\lambda\circ N_{E/\F_{343}}$, where
+$\F_{343}=\F_7[t]/(t^3+t^2+1)$ and $\lambda(t+2)=e^{2\pi i/18}$; the
+element $t+2$ is primitive.
+
+\subsection{The array}
+Index rows and columns by four border indices $\infty_0,\dots,\infty_3$ and
+the pairs $(b,x)$ with $b\in\{0,1,2,3\}$ and $x\in E$; the set
+$\{b\}\times E$ is the $b$-th \emph{field block}. Let
+\[
+L=\begin{pmatrix}1&1&1&1\\-1&1&-1&1\\-1&1&1&-1\\-1&-1&1&1\end{pmatrix},\qquad
+U=\begin{pmatrix}-1&-1&-1&-1\\-1&-1&1&1\\-1&1&1&-1\\-1&1&-1&1\end{pmatrix}.
+\]
+Given four patterns $m_0,m_1,m_2,m_3$, define
+\begin{equation}\label{eq:array}
+\begin{aligned}
+H(\infty_a,\infty_c)&=L_{ac}, & H(\infty_a,(c,y))&=U_{ac},\\
+H((b,x),\infty_c)&=-U_{cb}, & H((b,x),(c,y))&=L_{bc}\,m_{b\oplus c}\bigl(\phi_{bc}(x,y)\bigr),
+\end{aligned}
+\end{equation}
+where $\oplus$ is bitwise exclusive or, $\phi_{bb}(x,y)=y-x$,
+$\phi_{bc}(x,y)=-(x+y)$ if $b\ne c$ and $0\in\{b,c\}$, and
+$\phi_{bc}(x,y)=x+y$ otherwise. With $m_0,m_1,m_2,m_3=A,B,C,D$ developed as
+$A(x,y)=f_A(y-x)$ and $R$ the permutation matrix of $x\mapsto-x$, the core
+of~\eqref{eq:array} is the Wallis--Whiteman array
+\[
+\begin{pmatrix}
+A&BR&CR&DR\\
+-BR&A&-D^{\mathsf T}R&C^{\mathsf T}R\\
+-CR&D^{\mathsf T}R&A&-B^{\mathsf T}R\\
+-DR&-C^{\mathsf T}R&B^{\mathsf T}R&A
+\end{pmatrix},
+\]
+and~\eqref{eq:array} is equation~(11) of~\cite{Kline18}.
+
+An \emph{arrangement} is a choice of which pattern of a system occupies each
+position $0,1,2,3$, together with a set of positions whose patterns are
+\emph{reversed}, $m(z)\mapsto m(-z)$. Reversal fixes the value at $0$ and
+negates the other values. The \emph{standard} arrangement puts $A,B,C,D$ in
+positions $0,1,2,3$ with no reversal; for system I in characteristic $7$
+this is the matrix of~\cite{Kline18}, with the development direction and the
+position of the Paley pattern fixed as in its released code. We write $\bar A$ for $A$ reversed.
+
+\begin{lemma}\label{lem:hadamard}
+If the autocorrelations $\sum_{y\in E}m_i(y)m_i(y+s)$ of the four patterns
+sum to $-4$ at every $s\ne0$, then every arrangement of them gives a skew
+Hadamard matrix of order $4(Q+1)$.
+\end{lemma}
+
+\begin{proof}
+Each pattern is odd off the origin with value $1$ at $0$, so each
+development $M$ satisfies $M+M^{\mathsf T}=2I$ and has row sums $1$, and
+reversal preserves autocorrelations. The block computation
+of~\cite[\S5]{Kline18} uses only these facts and the sum of the four
+autocorrelations, not which pattern sits in which position.
+\end{proof}
+
+\subsection{The two systems}
+
+\begin{theorem}\label{thm:gauss}
+In the setting of \S2.1, for each system the autocorrelations of $f_{w_A}$,
+$f_{w_B}$ and $f_{w_C}$ sum to $-3$ at every nonzero shift. Each of the
+three takes, at nonzero shifts, the values $-1$, $-1+t$ and $-1-t$ for one
+integer $t\neq0$, and attains each of them.
+\end{theorem}
+
+The Paley pattern has autocorrelation $-1$ at every nonzero shift, so
+Lemma~\ref{lem:hadamard} applies to both systems.
+
+\begin{proof}[Proof sketch]
+Let $G_j$ be the Gauss sum of $\chi^j$ with the canonical additive character.
+Frobenius invariance gives $G_j=G_{pj}$, and $p\bmod18\in\{7,13\}$ generates
+the subgroup $\{1,7,13\}$, so $G_1G_5=G_9^2=-Q$. The norm exponent $(Q-1)/(p-1)$ is $\equiv3d\pmod{18}$, so
+$\chi^6$ is trivial and $\chi^3$ is quadratic on $\F_p^\times$, and
+$(3/p)=-1$ because $p\equiv7\pmod{12}$. The Hasse--Davenport product
+formula~\cite[\S11.3]{BEW} for the cubic and quadratic characters gives
+$G_3=G_1^2/G_5$, $G_{15}=G_5^2/G_1$ and, with $\tau=\chi(4)$, a relation
+$\bar\delta=-\tau\delta$ for $\delta=(G_1^2-G_5G_9)/G_2$. The quadratic
+formula for $\chi^3$ gives $G_3/G_9=G_6/G_{12}$, because $\chi^3(4)=1$. If
+$\delta=0$, then $G_3=G_9$, so $G_6=G_{12}$ and $G_6^2=Q$;
+but $G_6\in\Q(\zeta_3)$ because $\chi^6$ is trivial on $\F_p^\times$, and
+$\sqrt Q$ is irrational. So $\delta\ne0$.
+
+Expanding each pattern in the characters $\chi^u$ ($u$ odd) writes its
+autocorrelation at a shift of class $c$ as
+$-\tfrac1{81}\sum_{h\text{ even}}\zeta^{hc}\sum_{u\text{ odd}}
+C(u)C(h-u)J(\chi^u,\chi^{h-u})$, with $C(u)=\sum_{j=0}^8w_j\zeta^{-uj}$
+and $\zeta=e^{2\pi i/18}$; the term $h=0$ equals $-1$. For $h\ne0$ we
+substitute $J(\chi^u,\chi^{h-u})=G_uG_{h-u}/G_h$ and group the terms by
+monomials in $G_1,G_5,G_9$. An exact computation in $\Z[\zeta]$ shows that for the
+sum of the three patterns every group cancels, and that for each single
+pattern every nonconstant term is an explicit integer multiple of $\delta$,
+for each of the three values of $\tau$. The specialized coefficients at the
+eighteen shifts are permutations of $(0,V,-V)$ with $V\ne0$, and each of
+the three patterns attains $0$, $V$ and $-V$; see \S\ref{sec:verify}.
+\end{proof}
+
+\begin{remark}
+For system I and $p=7$, Theorem~\ref{thm:gauss}, including the three
+values, is proved in~\cite{Kline18} by a different route; system II and the
+primes $p\ne7$ are new here. The proof above holds
+for every primitive character of order $18$.
+\end{remark}
+
+\subsection{\texorpdfstring{Lifting from $\F_{343}$}{Lifting from F343}}
+The certificates for characteristic $7$ use cyclotomic numbers. For
+$Q=343^d$ let $T_d(i,j)$ count $z\in E\setminus\{0,1\}$ with $j(z)=i$ and
+$j(1-z)=j$.
+
+\begin{lemma}\label{lem:lift}
+Let $d$ be odd. Then $T_d$ equals the $d$-fold cyclic convolution of $T_1$
+on $(\Z/18\Z)^2$ plus the constant table with entry $(343^d-2-341^d)/324$.
+Consequently, for a prime $\ell\equiv1\pmod{18}$, $T_d\bmod\ell$ depends only
+on $d\bmod(\ell-1)$.
+\end{lemma}
+
+\begin{proof}
+At $(u,v)\ne(0,0)$ the Fourier coefficient of $T_d$ is the Jacobi sum
+\[
+ J_d(u,v)=\sum_{z\ne0,1}\chi^u(z)\chi^v(1-z).
+\] By the Davenport--Hasse
+lifting theorem for Gauss sums~\cite[Theorem 5.14]{LidlNiederreiter}
+and the expression of a Jacobi sum as $G(\chi^u)G(\chi^v)/G(\chi^{u+v})$,
+we have $J_d(u,v)=(-1)^{d-1}J_1(u,v)^d=J_1(u,v)^d$ when $\chi^u$, $\chi^v$
+and $\chi^{u+v}$ are nontrivial; in the degenerate cases $J_d$ equals $-1$ or
+$-\chi^u(-1)$ for every $d$, and $\chi(-1)=-1$ for every $d$, so again
+$J_d=J_1^d$. At $(0,0)$ the coefficients are $Q-2$ and, for the convolution
+power, $341^d$. The two tables therefore have the same Fourier transform,
+which proves the identity. For the last sentence, reduce modulo a prime
+above $\ell$, which maps $\Z[\zeta]$ onto $\F_\ell$; since $324=18^2$ is
+invertible modulo $\ell$, $T_d\bmod\ell$ is the inverse transform of the
+reductions of $J_1(u,v)^d$ at $(u,v)\ne(0,0)$ and of $343^d-2$ at
+$(0,0)$. For $d\ge1$ and
+$a\in\F_\ell$, $a^d$ depends only on $d\bmod(\ell-1)$.
+\end{proof}
+
+We use $\ell=37$ and $\ell=19$. Each certificate below also checks its values
+at $d=1$ by direct summation of matrix entries over $\F_{343}$.
+
+\section{Four-row sets}\label{sec:quartets}
+
+For a set $S$ of four rows of $H$, let $\pi_S$ be the entrywise product of
+the four rows, and call the columns where $\pi_S$ takes its less frequent
+sign the \emph{minority columns} of $S$. The number of minority columns, and
+the set of minority columns, are preserved by equivalence: row signs
+multiply $\pi_S$ by a constant, and column signs and permutations act on
+columns. Call $S$ \emph{exceptional} if it has at most four minority
+columns, and \emph{closed} if it has none. Write $\mathcal B$ for the four
+border rows and $\mathcal Z=\{(b,0)\}$ for the four origin rows.
+
+\begin{theorem}\label{thm:quartets}
+For both systems, every admissible $p$ and $d$, every character of order
+$18$ and every arrangement, the exceptional row sets of $H$ are exactly
+$\mathcal B$ and $\mathcal Z$, and each has exactly four minority columns.
+The minority columns of $\mathcal B$ are the border columns. Those of
+$\mathcal Z$ are the four origin columns if an even number of patterns is
+reversed, and the border columns otherwise.
+\end{theorem}
+
+\begin{proof}
+\emph{The two sets.} $\pi_{\mathcal B}$ is read from $L$ and $U$: it is
+constant on each field column block, and equals the minority sign exactly on
+the four border columns. For $\mathcal Z$, the row $(b,0)$ restricted to
+field column block $c$ is $\pm m_{b\oplus c}(\pm y)$; in each system the four
+patterns multiply to $1$ off the origin, and a direct evaluation shows that
+$\pi_{\mathcal Z}$ is $+1$ on the border columns, $-1$ on the origin columns,
+and $(-1)^{\#\text{reversed}}$ on all other columns.
+
+\emph{Centers.} Let $S$ be any other set of four rows. A row $(b,x)$
+restricted to field column block $c$ equals
+$\pm m_{b\oplus c}(\pm(y-a))$ with \emph{center} $a=x$ if $b=c$ and
+$a=-x$ otherwise. Because patterns are odd off the origin, for $y\ne a$ this
+is $\pm m_{b\oplus c}(y-a)$. Two rows of $S$ with the same center in a block
+come from different field blocks, since otherwise they would coincide; so the
+patterns multiplied at one center are distinct. A border row is constant on
+each field block. For both systems the products of one, two or three
+distinct patterns are nonconstant on $E^\times$ (indeed they have mean of
+absolute value at most $1/3$), and the product of all four is $1$. Hence, if
+on every field column block every center carries a constant product, then
+either $S$ has no field rows, so $S=\mathcal B$, or $S$ consists of one row
+from each field block with a common center in every column block. Writing the
+rows as $(b,x_b)$, block $0$ gives $x_0=-x_1=-x_2=-x_3$ and block $1$ gives
+$-x_0=x_1=-x_2=-x_3$, so $x_0=-x_0$ and all $x_b=0$: $S=\mathcal Z$.
+
+\emph{Large fields.} Otherwise some column block $c$ has $s\le4$ distinct
+centers $a_1,\dots,a_s$ with products $g_1,\dots,g_s$, at least one
+nonconstant. Expand $g_k$ on $E^\times$ in the characters $\chi^u$ with
+normalized coefficients $c_{k,u}$. For $y$ away from the centers,
+\[
+ \prod_k g_k(y-a_k)=\sum_{u\in(\Z/18\Z)^s}\Bigl(\prod_k c_{k,u_k}\Bigr)
+ \chi\Bigl(\prod_k(y-a_k)^{u_k}\Bigr).
+\]
+For $u\ne0$, the polynomial $\prod_k(y-a_k)^{u_k}$ is not an eighteenth power,
+so Weil's bound~\cite[Theorem 5.41]{LidlNiederreiter} gives
+$\abs{\sum_{y\in E}\chi(\cdot)}\le(s-1)\sqrt Q$; removing the centers costs
+at most $s$ more, and restoring the true values at the centers at most $s$.
+A product of $k$ patterns has the parity $(-1)^k$ under $j\mapsto j+9$, so at
+most nine of its coefficients are nonzero and $\sum_u\abs{c_{k,u}}\le3$ by
+Parseval and the Cauchy--Schwarz inequality; a single pattern of either system has at most seven nonzero
+coefficients, so $\sum_u\abs{c_{k,u}}\le\sqrt7$. If $s=4$, each center carries
+a single pattern, whose mean is $0$, and the block sum of $\pi_S$ has absolute
+value at most $49(3\sqrt Q+4)+4$. If $s\le3$, the nonconstant center has mean
+of absolute value at most $1/3$ and the bound is $Q/3+27(2\sqrt Q+3)+3$. Both
+are less than $Q-8$ for $Q\ge31^3$. But four or fewer minority columns force
+an absolute block sum of at least $Q-8$ on every field block. The only
+admissible field with $Q<31^3$ is $Q=343$.
+
+\emph{The field $\F_{343}$.} Here an exhaustive computation over all row
+quartets settles the claim, for each system, for the standard arrangement and
+the arrangement with positions $2$ and $3$ exchanged, each with and without
+reversal of the pattern in position $0$, and for both orientations
+$\chi,\chi^{-1}$ of the character. Every primitive character of order $18$ is
+$\chi\circ\varphi$ or $\chi^{-1}\circ\varphi$ for a field automorphism
+$\varphi$, and the matrix built from $\chi\circ\varphi$ is obtained from the
+one built from $\chi$ by applying $\varphi$ to every field coordinate,
+because $\varphi$ is additive and $\phi_{bc}$ is linear; so the two matrices
+are equivalent. The computation
+uses that two disjoint pairs of rows $\{r_1,r_2\},\{r_3,r_4\}$ form an
+exceptional quartet only if the products $r_1r_2$ and $r_3r_4$ agree up to
+sign outside four columns, hence on one of five disjoint samples of $32$
+columns; all colliding pairs on each sample are then compared in full. The
+other arrangements are equivalent to these by Proposition~\ref{prop:transport}
+below, through equivalences that map $\mathcal B$ to $\mathcal B$ and
+$\mathcal Z$ to $\mathcal Z$. Only the existence of these equivalences is used
+here: they are explicit, and checking them does not depend on this
+theorem.
+\end{proof}
+
+\begin{corollary}\label{cor:closed}
+In the matrices of Theorem~\ref{thm:quartets} there are no closed row
+quartets. There are exactly two closed column quartets if an even number of
+patterns is reversed, and exactly one otherwise. Hence no such matrix is
+equivalent to its transpose.
+\end{corollary}
+
+\begin{proof}
+For a skew matrix and a set $T$ of four indices, the product of the four
+columns in $T$ equals the product of the four rows in $T$ off $T$ and its
+negative on $T$: off $T$ transposition negates all four factors, on $T$ only
+three. So a closed column quartet is a row quartet whose minority columns are
+its own four indices. By Theorem~\ref{thm:quartets} this holds for
+$\mathcal B$ always and for $\mathcal Z$ exactly when an even number of
+patterns is reversed. Exceptional row quartets have four minority columns,
+so none is closed.
+\end{proof}
+
+\begin{corollary}\label{cor:kron}
+No matrix of Theorem~\ref{thm:quartets} is equivalent to a Kronecker product
+$H_1\otimes H_2$ of Hadamard matrices of orders greater than $1$, or to a
+skew doubling $\bigl(\begin{smallmatrix}K&K\\-K^{\mathsf T}&K^{\mathsf T}
+\end{smallmatrix}\bigr)$ of a skew Hadamard matrix $K$.
+\end{corollary}
+
+\begin{proof}
+In $H_1\otimes H_2$ the rows indexed $(i,k),(i,l),(j,k),(j,l)$ have constant
+product, a closed row quartet. In a skew doubling of order $N$, for indices
+$i\ne j$ the rows $i$, $j$ of the top half and of the bottom half have product
+$-1$ exactly at the coordinates $i$ and $j$ of each half, because
+$K^{\mathsf T}$ reverses every off-diagonal sign of a skew $K$; this gives
+$\binom{N/2}2>2$ exceptional quartets.
+\end{proof}
+
+\section{From an equivalence to one semilinear map}\label{sec:frame}
+
+Fix $p$, $d$ and $\chi$, and let $H$ and $H'$ be matrices of the array for
+arrangements of systems I or II. An equivalence $H\to H'$ maps exceptional
+quartets to exceptional quartets. We call it \emph{marked} if it maps the
+border rows of $H$ to the border rows of $H'$; then it also maps $\mathcal Z$
+to $\mathcal Z'$.
+
+\begin{proposition}\label{prop:frame}
+A marked equivalence $H\to H'$ maps each field row block and each field
+column block of $H$ onto one of $H'$, the four Paley blocks onto the four
+Paley blocks, and acts on field coordinates by
+\[
+(b,x)\mapsto(\pi(b),\varepsilon_bM(x)),\qquad(c,y)\mapsto(\rho(c),\varepsilon'_cM(y)),
+\]
+with permutations $\pi,\rho$, signs $\varepsilon_b,\varepsilon'_c$, and one
+map $M(x)=\beta x^{p^k}$, $\beta\ne0$. Its row and column signs are constant
+on each field block.
+\end{proposition}
+
+\begin{proof}
+\emph{Blocks.} The border columns are the minority columns of $\mathcal B$,
+so they are mapped to border columns. On them, a field row $(b,x)$ has signs
+$(-U_{cb})_c$, which depend only on $b$, and the four columns of $U$ are
+pairwise non-proportional; so the projective sign pattern on the border
+columns recovers the field row blocks. Dually the border rows recover the
+field column blocks. Comparing an entry in a border column with its image
+shows that row signs are constant on each field row block, and dually for
+columns.
+
+\emph{Paley blocks.} Inside a field block $(b,c)$, two rows $(b,x),(b,x')$
+have inner product equal to the autocorrelation of $m_{b\oplus c}$ at
+$x-x'$; reversal does not change it. For the Paley pattern this is $-1$ at
+every nonzero shift. By Theorem~\ref{thm:gauss} each other pattern takes both
+values $-1\pm t$ with $t\neq0$, and one of them has absolute value different
+from $1$. So the Paley blocks are the field blocks in which all row pairs have
+inner product $\pm1$, and the equivalence permutes them.
+
+\emph{Semiaffine maps.} In a Paley block the entry is a fixed sign times
+$\eta(\pm(y-u))$, extended by $1$ at $0$, where $\eta$ is the quadratic
+character and $u=\pm x$. In each row, $(Q-1)/2$ entries have one sign and
+$(Q+1)/2$ the other; call the first the minority entries. Since $-1$ is a
+nonsquare, after replacing $x$ and $y$ by $\pm x,\pm y$ the minority entries
+are exactly the incidences $y-x\in S$ of the Paley design, with $S$ the
+nonzero squares. Row and column signs are constant on the block, so the
+equivalence maps the block's entries to the target block's entries up to one
+sign, and the counts force minority entries to minority entries. Thus the
+equivalence induces permutations $F,G$ of $E$ with $F(y)-G(x)\in S$ whenever
+$y-x\in S$.
+Kantor's Corollary~8.2 in~\cite{Kantor2T}, valid for odd prime powers
+greater than $11$ (here $Q\equiv3\pmod4$, the case of his Theorem~8.1), gives $F=G$ and $F(x)=\beta x^\sigma+\alpha$ with
+$\beta\in S$ and $\sigma\in\Aut(E)$. Each field row block and each field
+column block lies in exactly one Paley block, so all eight coordinate maps
+are of this form up to the substitutions $x\mapsto\pm x$. The origin row of
+each block is mapped to an origin row, so the row maps fix $0$; since $F=G$,
+so do the column maps. Hence every coordinate map is additive.
+
+\emph{One map.} In a field block write the argument of the pattern as
+$h(y+tx)$ with $h,t\in\{\pm1\}$ ($t=-1$ on the diagonal). Let $P,S'$ be the
+additive maps on the row and column coordinates of this block, and let $t'$
+belong to the target block. Holding $z=y+tx$ fixed, the image argument is
+$h'(S'(z)+(t'P-tS')(x))$, and the target entry does not depend on $x$.
+Hence every element of the image of the additive map $t'P-tS'$ is a period of
+the target pattern. A nonzero additive subgroup $W$ of $E$ has order a power
+of $p$, and a function constant on its cosets has sum divisible by $p$; but
+every pattern sums to $1$. So $t'P=tS'$ for every block. Since every row
+block meets every column block, all eight maps are $\pm M$ for one $M$.
+\end{proof}
+
+A marked equivalence is therefore described by finite data: the
+permutations of the border rows, the field row blocks, the border columns and
+the field column blocks, the signs, and the action of $M$ on classes,
+\[
+j(\pm M(x))=h+p^kj(x),\qquad h\in\Z/18\Z,\ p^k\bmod18\in\{1,7,13\}.
+\]
+Call such data a \emph{template}. The template determines whether entries
+agree on every class and at every origin, and it depends on $p$ only through
+$p\bmod18\in\{7,13\}$, which generate the same group $\{1,7,13\}$.
+Conversely, a template that preserves all entries is realized by each of the
+$(Q-1)/18$ elements $\beta$ of the class $h$ (after the sign) and each of the
+$d$ exponents $k'\in\Z/3d\Z$ with $p^{k'}\equiv p^k\pmod{18}$, giving
+exactly $\Lambda_Q$ distinct marked equivalences per template.
+
+\begin{proposition}\label{prop:transport}
+For each system, the following holds for every admissible $p$, $d$ and
+$\chi$. Two arrangements are related by a marked equivalence if and only if
+their permutations of the four patterns have the same sign and their numbers
+of reversed patterns have the same parity. Each of the four resulting classes
+contains $96$ of the $384$ arrangements. The marked self-equivalences of an
+arrangement form $1$ template for system I and $3$ templates for system II.
+\end{proposition}
+
+\begin{proof}
+A finite enumeration over all templates. With the sign of the first border
+row normalized, the program runs through the $24^4$ permutations of border
+rows, field row blocks, border columns and field column blocks; the
+$8\times8$ submatrix on border and origin indices then determines all row and
+column signs, $96$ choices preserve it, and $48$ of these are compatible with
+the relations $t'P=tS'$. For each of the $48$ it tries the $54$ class actions
+$(h,p^k\bmod18)$ and compares the patterns on all eighteen classes and at the
+origin in each of the sixteen field blocks. For system II the three
+self-templates have $h=0,3,6$ (and $0,12,15$ after reversal of the pattern
+in position $0$), all with $p^k\equiv1\pmod{18}$.
+\end{proof}
+
+\section{Automorphism groups}\label{sec:aut}
+
+\begin{theorem}\label{thm:groups}
+Let $H$ be any arrangement of system I or II for admissible $p$, $d$, $\chi$,
+and let $\Aut_0(H)$ be the group of row-and-column permutations underlying its
+automorphisms, i.e.\ automorphisms modulo negation of all rows and columns.
+\begin{enumerate}
+\item The subgroup of $\Aut_0(H)$ fixing the set $\mathcal B$ has order $\Lambda_Q$
+for system I and $3\Lambda_Q$ for system II, and $\Aut_0(H)$ has order $\Lambda_Q$ or
+$2\Lambda_Q$ for system I, and $3\Lambda_Q$ or $6\Lambda_Q$ for system II.
+\item For the standard arrangement of system I, the subgroup fixing
+$\mathcal B$ is the group of maps $x\mapsto ax^{p^{3j}}$, $a\in(E^\times)^{18}$,
+applied to every field copy, fixing all border indices; it is
+$K\rtimes\Gal(E/\F_{p^3})$ with $K=(E^\times)^{18}$.
+\item Let $p=7$. Every automorphism fixes $\mathcal B$ for every
+arrangement of system I when $\chi$ is the character of~\cite{Kline18}, and
+for every arrangement of system II with an odd number of reversed patterns
+and every character $\chi$ of order $18$.
+\end{enumerate}
+\end{theorem}
+
+Theorem~\ref{thm:aut} is part (2) with part (3); the order is $19$ at
+$Q=343$, and the group is cyclic there because $K$ is cyclic and $d=1$.
+
+\begin{proof}
+(1) Proposition~\ref{prop:transport} and the count of $\Lambda_Q$ realizations per
+template give the stabilizer of $\mathcal B$. An automorphism permutes the
+two exceptional quartets, so this stabilizer has index at most $2$.
+
+(2) The single self-template of the standard arrangement of system I has all
+permutations trivial, all signs positive, $h=0$ and $p^k\equiv1$.
+
+(3) Mark either exceptional quartet, delete it and its four minority columns,
+and partition the remaining rows by their projective signs on the deleted
+columns and the remaining columns by their projective signs on the deleted
+rows. This gives sixteen submatrices, and the number of them in which every
+two rows have inner product $\pm1$ is an invariant of the marking. For the
+border marking the submatrices are the field blocks, and exactly four, the
+Paley blocks, pass. For the origin marking, a certificate shows that none of
+the sixteen passes: for each it exhibits a border row and a field row of the
+same part whose restricted inner product is not $\pm1$ modulo $37$. The
+inner products are linear in the cyclotomic numbers $T_d$, so
+Lemma~\ref{lem:lift} with $\ell=37$ reduces all odd $d$ to the eighteen
+residues of $d$ modulo $36$, and each value is also checked at $d=1$ by
+summing matrix entries. The certificate covers the four arrangements of
+system I with positions $2,3$ standard or exchanged and position $0$
+reversed or not, for the character of~\cite{Kline18}, and the two
+arrangements of system II with position $0$ reversed, for both orientations
+$\chi,\chi^{-1}$; every character of order $18$ is the image of one of these
+under a field automorphism, which gives an equivalent matrix (see the proof of Theorem~\ref{thm:quartets}). By
+Proposition~\ref{prop:transport} these represent all arrangements in
+question.
+\end{proof}
+
+\begin{remark}
+At $Q=343$ the order $19$ was also confirmed by an exhaustive
+individualization-and-refinement search for isomorphisms between the
+normalized bipartite graphs of $H$, anchored at a border row and border
+column, with every accepted map checked against all entries. The search
+restricts the image of the anchors to the $32$ pairs allowed by
+Theorem~\ref{thm:quartets}, and finds exactly the $19$ scalar maps.
+\end{remark}
+
+\section{Equivalence classes}\label{sec:classes}
+
+\begin{proof}[Proof of Theorem~\ref{thm:systems}]
+The matrices are skew Hadamard by Lemma~\ref{lem:hadamard} and
+Theorem~\ref{thm:gauss}. By Corollary~\ref{cor:closed}, the ordered pair
+(closed row quartets, closed column quartets) is $(0,2)$ for the standard
+arrangements, $(0,1)$ after reversing $A$, and $(2,0)$ and $(1,0)$ for their
+transposes. By Theorem~\ref{thm:groups}(1), the automorphism group order
+lies in $\{\Lambda_Q,2\Lambda_Q\}$ for system I and in $\{3\Lambda_Q,6\Lambda_Q\}$ for system II,
+and transposition preserves it. These two invariants separate all eight
+matrices.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sixteen}]
+By Proposition~\ref{prop:transport} each system has at most four classes of
+arrangements and four of transposes, and the transposes are distinct from the
+arrangements by Corollary~\ref{cor:closed}. Systems I and II are separated
+by automorphism group order. For system I, every equivalence between
+arrangements is marked by Theorem~\ref{thm:groups}(3), so the four classes
+of Proposition~\ref{prop:transport} are distinct: eight classes with the
+transposes. For system II, the closed column quartets separate even from odd
+reversal parity, and the two odd classes are distinct because every
+equivalence between them is marked. It remains to compare the two even
+classes, represented by the arrangements $(A,B,C,D)$ and $(A,B,D,C)$.
+
+For these two matrices, delete the eight rows of $\mathcal B\cup\mathcal Z$
+and their eight minority columns. Group the remaining columns by their
+projective signs on the eight deleted rows; there are $24$ cells, each the
+union of three classes of one field block. For a choice $T\in\{\mathcal B,
+\mathcal Z\}$, group the $24$ cells into four groups of six by their
+projective signs on $T$. For each remaining row $r$ and each group, form the
+six absolute cell sums $\abs{\sum_{c\in C}H_{rc}H_{sc}}$ with an anchor $s$
+among the deleted rows (any anchor gives the same value), reduce them modulo
+$19$ up to sign, and sort them. Let $n_T(\tau)$ be the number of pairs (row,
+group) with sorted tuple $\tau$. The unordered pair
+$\{n_{\mathcal B}(\tau),n_{\mathcal Z}(\tau)\}$ is invariant under all
+equivalences, including those that exchange the two quartets. By
+Lemma~\ref{lem:lift} with $\ell=19$ these counts depend only on $d\bmod18$;
+they are multiples of $(Q-1)/18$. Table~\ref{tab:hist} gives, for each
+residue with $3\nmid d$, a tuple whose pair of counts differs between the two
+matrices. For $d\equiv3,9,15\pmod{18}$ the pairs agree for every tuple, and
+the test is inconclusive. Hence system II gives four classes of arrangements
+when $3\nmid d$ and three or four when $3\mid d$, and twice as many with
+transposes.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccc}
+\toprule
+$d\bmod18$ & tuple $\tau$ & $(A,B,C,D)$ & $(A,B,D,C)$\\
+\midrule
+1  & $(1,5,5,5,7,7)$ & $\{72,72\}$ & $\{0,72\}$\\
+5  & $(1,1,1,3,6,8)$ & $\{72,144\}$ & $\{72,72\}$\\
+7  & $(1,3,3,4,4,7)$ & $\{0,0\}$ & $\{0,72\}$\\
+11 & $(1,3,3,4,4,7)$ & $\{0,72\}$ & $\{0,0\}$\\
+13 & $(1,1,1,3,6,8)$ & $\{72,72\}$ & $\{72,144\}$\\
+17 & $(1,5,5,5,7,7)$ & $\{0,72\}$ & $\{72,72\}$\\
+\bottomrule
+\end{tabular}
+\caption{Witness tuples for the two even arrangements of system II. Counts
+are divided by $(Q-1)/18$.}\label{tab:hist}
+\end{table}
+
+\begin{proof}[Proof of Theorem~\ref{thm:compare}]
+Transposes, Kronecker products and skew doublings are excluded by
+Corollaries~\ref{cor:closed} and~\ref{cor:kron}. Suppose $H$ is equivalent
+to a Hadamard matrix $H^\ast$ of the array whose four functions are constant
+on the cosets of the sixth powers. Multiplication of every field coordinate
+by a generator of the sixth powers is an automorphism of $H^\ast$ of odd order
+$\mu=(Q-1)/6$; it fixes the eight border and origin rows and columns, and all
+its other cycles have length $\mu$. Its conjugate $g$ is an automorphism of $H$
+with the same cycle type. Being of odd order, $g$ fixes each exceptional
+quartet and its minority columns as sets, and these sets have fewer than
+$\mu$ elements, so $g$ fixes them pointwise. Then $g$ lies in the stabilizer of
+$\mathcal B$ and fixes every border row and border column. Since the columns
+of $U$ are pairwise non-proportional, the border rows then show that $g$
+maps each field column block to itself, and dually each field row block. So
+its template has trivial permutations. Then the border and origin entries
+force all row and column signs to agree, and the relations $t'P=tS'$ force
+all coordinate signs to agree; with the normalization of
+Proposition~\ref{prop:transport}, the class condition reads $m(h+p^kj)=m(j)$
+for each of the four patterns $m$ of the system and every class $j$, and a
+reversed pattern gives the same condition. That condition does not depend on
+the arrangement, and the enumeration of Proposition~\ref{prop:transport} for
+the standard arrangement shows that only $h=0$, $p^k\equiv1\pmod{18}$
+satisfies it. So $g$ has the form
+$x\mapsto ax^{p^{3j}}$ with $a\in(E^\times)^{18}$. If the field automorphism is trivial, the order of $g$
+divides $(Q-1)/18$, which $\mu$ does not. If it has order $b\ge3$, then $g^b$
+is multiplication by an element of a subfield with $p^{3d/b}$ elements, so the
+order of $g$ is at most $b(p^{3d/b}-1)<\mu$. Either way the order is not
+$\mu$.
+\end{proof}
+
+\section{Verification}\label{sec:verify}
+
+Every finite step above is an exact computation; Table~\ref{tab:certs}
+lists them with the programs, which are in the directory \texttt{code} of the
+repository. They need only Node.js and a C++17 compiler; together they run in
+about two and a half minutes on one core, and the repository pins every
+output.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{p{0.42\textwidth}p{0.5\textwidth}}
+\toprule
+Step & Check\\
+\midrule
+Theorem~\ref{thm:gauss}: grouped Gauss-sum identities and profiles; Fourier
+supports and subset means used in Theorem~\ref{thm:quartets} &
+\texttt{families/uniform.cjs}: exact arithmetic in $\Z[\zeta_{18}]$, both
+systems, all three values of $\tau$; cross-checked in explicit fields of sizes
+$7^3,31^3,43^3$ by \texttt{base/family-crosscheck.cjs}\\
+Lemma~\ref{lem:hadamard} at $Q=343$ & \texttt{base/gram.cpp}:
+$HH^{\mathsf T}=NI$ and $H+H^{\mathsf T}=2I$ for all $768$ arrangements\\
+Theorem~\ref{thm:quartets} at $Q=343$ & \texttt{algebra/flip-quartets.cjs}:
+all exceptional row quartets, both systems, the representative arrangements,
+both orientations of $\chi$\\
+Proposition~\ref{prop:transport} & \texttt{algebra/skeleton.cjs},
+\texttt{families/second-skeleton.cjs}, \texttt{algebra/placements.cjs}\\
+Theorem~\ref{thm:groups}(3) & \texttt{algebra/frame.cjs},
+\texttt{families/odd-frames.cjs}: origin marking modulo $37$, eighteen
+residues of $d\bmod36$, direct checks at $d=1$\\
+Table~\ref{tab:hist} & \texttt{families/even-frames.cjs}: histogram modulo
+$19$, nine odd residues of $d\bmod18$, direct checks at $d=1$\\
+Remark after Theorem~\ref{thm:groups} & \texttt{base/aut.cpp}: exhaustive
+automorphism search at order $1376$\\
+\bottomrule
+\end{tabular}
+\caption{Exact certificates.}\label{tab:certs}
+\end{table}
+
+\section{Remarks}\label{sec:remarks}
+
+\emph{Scope.} The theorems compare the matrices of this construction with
+each other and with the families named in Theorem~\ref{thm:compare}. They do
+not compare them with every other skew Hadamard matrix of the same orders,
+such as those of Goethals--Seidel type, and they give no new orders.
+
+\emph{Open cases.} When $3\mid d$ we do not know whether the two even
+arrangements of system II are equivalent; an equivalence would have to
+exchange the border rows with the origin rows. Outside the cases of
+Theorem~\ref{thm:groups}(3), that is, for $p\ne7$, for system I with the
+other orientation of the character, and for system II with an even number of
+reversed patterns, we do not know whether any automorphism exchanges the two
+exceptional quartets, which is why Theorem~\ref{thm:groups}(1) gives two
+possible orders. The sixteen-class
+count uses one character; the other orientation of the character was checked
+for the quartet theorem and for the origin-marking certificate of system II,
+but not for that of system I or for the histogram.
+
+\subsection*{Role of AI}
+AI assisted the derivations, the computer verification, the literature
+search and the exposition under the author's direction. Process-separated AI
+reviews checked the proofs and certificates; they are not independent expert
+peer review, and no independent human expert has examined the proofs. The
+release repository records the sources, the reviews and their dispositions.
+
+\begin{thebibliography}{9}
+\bibitem{BEW}
+B.~C. Berndt, R.~J. Evans and K.~S. Williams,
+\emph{Gauss and Jacobi Sums}, Wiley, New York, 1998.
+
+\bibitem{Hall62}
+M.~Hall, Jr.,
+\emph{Note on the Mathieu group $M_{12}$},
+Arch. Math. \textbf{13} (1962), 334--340.
+
+\bibitem{Kantor69}
+W.~M. Kantor,
+\emph{Automorphism groups of Hadamard matrices},
+J. Combin. Theory \textbf{6} (1969), 279--281.
+\href{https://doi.org/10.1016/S0021-9800(69)80088-8}{doi:10.1016/S0021-9800(69)80088-8}.
+
+\bibitem{Kantor2T}
+W.~M. Kantor,
+\emph{2-transitive symmetric designs},
+Trans. Amer. Math. Soc. \textbf{146} (1969), 1--28.
+\href{https://doi.org/10.1090/S0002-9947-1969-0255422-6}{doi:10.1090/S0002-9947-1969-0255422-6}.
+
+\bibitem{Karoui}
+A.~Karoui,
+\emph{An explicit skew-Hadamard matrix of order 1252 via cyclotomic unions},
+arXiv:2602.16089, 2026.
+
+\bibitem{Kline18}
+J.~Kline,
+\emph{Order-18 Jacobi triples beyond the sextic shift orbit}, version 0.1.0,
+2026.
+\href{https://doi.org/10.5281/zenodo.21783219}{doi:10.5281/zenodo.21783219}.
+
+\bibitem{Lehmer74}
+E.~Lehmer,
+\emph{A family of supplementary difference sets},
+Bull. Austral. Math. Soc. \textbf{11} (1974), 1--4.
+\href{https://doi.org/10.1017/S0004972700043550}{doi:10.1017/S0004972700043550}.
+
+\bibitem{LidlNiederreiter}
+R.~Lidl and H.~Niederreiter,
+\emph{Finite Fields}, second edition,
+Cambridge University Press, 1997.
+
+\bibitem{MomiharaXiang}
+K.~Momihara and Q.~Xiang,
+\emph{Skew Hadamard difference families and skew Hadamard matrices},
+arXiv:1801.08776, 2018.
+
+\bibitem{Orrick}
+W.~P. Orrick,
+\emph{Switching operations for Hadamard matrices},
+SIAM J. Discrete Math. \textbf{22} (2008), 31--50.
+\href{https://doi.org/10.1137/050641727}{doi:10.1137/050641727}.
+
+\bibitem{Pantangi}
+V.~R.~T. Pantangi,
+\emph{Difference families, skew Hadamard matrices, and critical groups of
+doubly regular tournaments}, Electron. J. Combin. \textbf{26} (2019), no.~3,
+Paper P3.59.
+\href{https://doi.org/10.37236/8753}{doi:10.37236/8753}.
+
+\bibitem{WallisWhiteman}
+J.~S. Wallis and A.~L. Whiteman,
+\emph{Some classes of Hadamard matrices with constant diagonal},
+Bull. Austral. Math. Soc. \textbf{7} (1972), 233--249.
+\href{https://doi.org/10.1017/S0004972700044993}{doi:10.1017/S0004972700044993}.
+
+\bibitem{Yamada92}
+M.~Yamada,
+\emph{Supplementary difference sets and Jacobi sums},
+Discrete Math. \textbf{103} (1992), 75--90.
+\href{https://doi.org/10.1016/0012-365X(92)90041-D}{doi:10.1016/0012-365X(92)90041-D}.
+\end{thebibliography}
+\end{document}

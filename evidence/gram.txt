@@ -1,0 +1,2 @@
+arrangements checked 768, failures 0
+PASS: every arrangement is a skew Hadamard matrix of order 1376
